@@ -21,6 +21,9 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" set color shcheme
+colorscheme desert
+
 " show line number
 set number
 
