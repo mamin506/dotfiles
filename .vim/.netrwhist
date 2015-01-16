@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/gongmuwei/Software'
+let g:netrw_dirhist_2='/Users/gongmuwei/Downloads/gcc-4.9.2/libstdc++-v3/testsuite/27_io/basic_stringstream'
+let g:netrw_dirhist_3='/Users/gongmuwei/Downloads/gcc-4.9.2/libstdc++-v3/testsuite/27_io/basic_stringstream/str'
+let g:netrw_dirhist_4='/Users/gongmuwei/Downloads/gcc-4.9.2/libstdc++-v3/testsuite/27_io/basic_stringstream/str/char'
+let g:netrw_dirhist_5='/Users/gongmuwei/workspace/myblog/mamin506.github.io/_layouts'
+let g:netrw_dirhist_6='/Users/gongmuwei/workspace/git_repo/500lines/web-server/01-echo-request-info'
