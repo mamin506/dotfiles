@@ -21,9 +21,6 @@ set history=50
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
 
-" HLS head files path
-"set path+=/wrk/xbj_vdi/minm/P4/rdi/HEAD/src/products/hls/src/technology/autopilot/header_files
-
 " In an xterm the mouse should work quite well, thus enable it.
 " set mouse=a
 
@@ -66,6 +63,18 @@ endif
 
 " Set leader
 let mapleader = "-"
+
+" Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage itself
+Plugin 'gmarik/Vundle.vim'
+
+" Plugins
+Plugin 'bling/vim-airline'
+
+call vundle#end()
 
 " }}}
 
@@ -143,6 +152,30 @@ endif " has("autocmd")
 
 " Functions declare ------------------------- {{{
 
+function! Template_module(lang)
+    if a:lang ==? "vhdl"
+        let l:content=""
+        let l:content=l:content . "library IEEE;\n"
+        let l:content=l:content . "use IEEE.STD_LOGIC_1164.all;\n"
+        let l:content=l:content . "use IEEE.NUMERIC_STD.all;\n\n"
+        let l:content=l:content . "entity ett_name is\n\tgeneric (\n);\n\tport (\n);\nend entity ett_name;\n\n"
+        let l:content=l:content . "architecture att_name is\n\nbegin\n\nend architecture att_name;\n"
+    else
+        let l:content=""
+        let l:content=l:content . "`timescale 1ns/1ps\n\n"
+        let l:content=l:content . "module  (\n);\n"
+        let l:content=l:content . "//------------------------Parameter----------------------\n\n"
+        let l:content=l:content . "//------------------------Local signal-------------------\n\n"
+        let l:content=l:content . "//------------------------Instantiation------------------\n\n"
+        let l:content=l:content . "//------------------------Body---------------------------\n\n"
+        let l:content=l:content . "endmodule\n"
+    endif
+    call setreg('z',l:content)
+    normal "zP
+endfunction
+
+command Templatevhdl :call Template_module("vhdl")
+
 " }}}
 
 " Plugin setting ------------------------------- {{{
@@ -155,6 +188,11 @@ endif " has("autocmd")
 
     " close tlist window when it is the only window
     let Tlist_Exit_OnlyWindow = 1
+
+" airline setting
+  "Appear status line all the time
+  set laststatus=2
+    
 
 " }}}
 
@@ -194,30 +232,5 @@ function! AutoPair(p)
     else
         return a:p
     endif
-endfunction
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Helpful functions
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! Template_module(lang)
-    if a:lang ==? "vhdl"
-        let l:content=""
-        let l:content=l:content . "library IEEE;\n"
-        let l:content=l:content . "use IEEE.STD_LOGIC_1164.all;\n"
-        let l:content=l:content . "use IEEE.NUMERIC_STD.all;\n\n"
-        let l:content=l:content . "entity ett_name is\n\tgeneric (\n);\n\tport (\n);\nend entity ett_name;\n\n"
-        let l:content=l:content . "architecture att_name is\n\nbegin\n\nend architecture att_name;\n"
-    else
-        let l:content=""
-        let l:content=l:content . "`timescale 1ns/1ps\n\n"
-        let l:content=l:content . "module  (\n);\n"
-        let l:content=l:content . "//------------------------Parameter----------------------\n\n"
-        let l:content=l:content . "//------------------------Local signal-------------------\n\n"
-        let l:content=l:content . "//------------------------Instantiation------------------\n\n"
-        let l:content=l:content . "//------------------------Body---------------------------\n\n"
-        let l:content=l:content . "endmodule\n"
-    endif
-    call setreg('z',l:content)
-    normal "zP
 endfunction
 
