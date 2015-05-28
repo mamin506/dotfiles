@@ -2,7 +2,6 @@
 
 ;; ----- ido-last-directory-list -----
 (
- ("/home/minm/" . "wrk/")
  ("c:/Users/minm/.emacs.d/" . "lisp/")
  ("c:/Users/minm/" . ".emacs.d/")
  ("c:/Users/" . "minm/")
@@ -11,7 +10,6 @@
 
 ;; ----- ido-work-directory-list -----
 (
- "/home/minm/wrk/"
  "c:/workspace/git/setting_sync/.emacs.d/"
  "c:/Users/minm/.emacs.d/"
  "c:/Users/minm/.emacs.d/lisp/"
@@ -21,7 +19,6 @@
 
 ;; ----- ido-work-file-list -----
 (
- "test.org"
  "custom.el"
  "init.el"
  "init-evil.el"
@@ -32,14 +29,6 @@
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/minm/wrk/" (21521 52275 948676 924000) "web_learn/" "lang_learn/" ".metadata/" "verilog/" "./" "scripts_learn/" "linux_learn/" "algorithm_learn/" "../")
-
- ("/home/minm/" (21848 49413 370476 546000) ".goutputstream-E42DNX" ".gnome2/" ".goutputstream-0R1MMX" ".compiz-1/" ".thunderbird/" ".Xil/" "Desktop/" "examples.desktop" ".goutputstream-A94KHX" ".goutputstream-6T4ECX" ".goutputstream-NFQLEX" ".gksu.lock" ".goutputstream-BWC37W" ".emacs.d/" "wrk/" ".digilent_dvctbl.txt" ".xsession-errors" ".adobe/" ".gnome/" ".macromedia/" ".goutputstream-I5VZ0W" ".gem/" ".pulse-cookie" ".goutputstream-WB13FX" ".gconf/" ".bash_logout" ".cache/" ".goutputstream-Q74HFX" ".goutputstream-H1RX8W" "Videos/" ".viminfo" ".pam_environment" ".local/" "Music/" ".xinput.d/" ".goutputstream-WZ7VFX" ".goutputstream-VSBKNX" ".goutputstream-8KFQ1W" "Public/" "Downloads/" ".matplotlib/" ".cse/" ".vimgolf/" ".goutputstream-T9EOCX" ".xsession-errors.old" ".mozilla/" "Software/" ".dmrc" "Documents/" ".gnome2_private/" ".vim/" ".lesshst" "Templates/" ".vivado_hls/" ".goutputstream-1CTPOX" ".goutputstream-FG04FX" ".chipscope/" ".gitconfig" ".matlab/" ".goutputstream-X43ECX" ".goutputstream-H7A31W" ".gphoto/" ".mission-control/" ".goutputstream-EC6KLX" ".ssh/" ".goutputstream-AE300W" ".goutputstream-6Q85JX" ".goutputstream-8VWBHX" ".goutputstream-AEQAKX" ".goutputstream-ME0T7W" ".gtk-bookmarks" ".goutputstream-MDVGCX" ".goutputstream-0EKK1W" "./" ".vimrc" ".subversion/" ".goutputstream-S2T6FX" ".goutputstream-XHR84W" ".ICEauthority" ".gvfs/" ".eclipse/" ".goutputstream-8VM9CX" ".goutputstream-64EV8W" ".goutputstream-ONZ77W" ".swt/" ".pulse/" ".goutputstream-QQPU0W" ".lftp/" ".longene/" "workspace/" ".bash_history" ".goutputstream-4GMQ8W" ".Xauthority" ".goutputstream-YTBZLX" ".pki/" ".goutputstream-VJW2KX" ".goutputstream-33TZBX" ".goutputstream-NIST7W" ".Xilinx/" "git/" ".fonts" ".goutputstream-3WAJQX" "myblog/" ".thumbnails/" ".bash_aliases" ".fontconfig/" ".java/" "Pictures/" ".bashrc" "../" ".goutputstream-A46Q7W" ".config/" ".dbus/" ".gstreamer-0.10/" ".profile" ".goutputstream-A0R5EX")
-
- ("/home/minm/Downloads/" (21848 46659 984823 244000) "systemc_regressions-2.3.1.tgz" "vimgolf-0.4.5/" "vim74/" "emacs-24.5/" "emacs-24.5.tar.gz" "mysql-connector-java-5.1.31/" "verilog-0.9.7/" "lida-03.00.00.tgz" "2014-01-07-wheezy-raspbian.zip" "./" "systemc-2.3.1.tgz" "verilog-0.9.7.tar.gz" "SwitchyOptions.bak" "vim-7.4.tar.bz2" "../")
-
- ("/home/minm/Downloads/emacs-24.5/" (21848 48959 276224 815000) "doc/" "admin/" "m4/" "lib-src/" "make-dist" "COPYING" "site-lisp/" "Makefile" "README" "msdos/" "BUGS" "lisp/" "nextstep/" "Makefile.in" "oldXMenu/" "info/" "config.log" "autogen.sh" "build-aux/" "configure.ac" ".dir-locals.el" "./" "configure" "ChangeLog" "src/" "lib/" "aclocal.m4" "INSTALL" "nt/" "lwlib/" "config.status" "../" "etc/" "config.bat" "leim/")
-
  ("c:/workspace/git/setting_sync/.emacs.d/" (21846 4111 0 0) "test-startup.sh" "site-lisp/" "recentf" "README.md" "org-clock-save.el" "lisp/" "LICENSE" "init.el" "ido.last" "elpa/" "custom.el" "auto-save-list/" ".travis.yml" ".smex-items" ".gitignore" ".agignore" "#org-clock-save.el#" "../" "./")
 
  ("c:/Users/minm/.emacs.d/" (21846 981 0 0) "test-startup.sh" "site-lisp/" "recentf" "README.md" "org-clock-save.el~" "org-clock-save.el" "lisp/" "LICENSE" "init.el~" "init.el" "ido.last~" "ido.last" "elpa/" "custom.el~" "custom.el" "auto-save-list/" ".travis.yml" ".smex-items" ".gitignore" ".agignore" ".#init.el" "#org-clock-save.el#" "#init.el#" "../" "./")
