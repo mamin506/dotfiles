@@ -1,7 +1,6 @@
 # ignore ruls in .vim folder
 .vim/.netrwhist
 .vim/bundle/*
-!.vim/bundle/Vundle.vim
 !.vim/bundle/Vundle.vim/*
 
 # ignore rule in .emacs.d folder
