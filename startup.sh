@@ -9,6 +9,8 @@ ln -s $CURR_DIR/.bashrc ~/.bashrc
 
 ln -s $CURR_DIR/.vimrc ~/.vimrc
 ln -s $CURR_DIR/.vim ~/.vim
+vim +PluginInstall +qall
 
 ln -s $CURR_DIR/.emacs.d ~/.emacs.d 
+
 
