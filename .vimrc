@@ -101,6 +101,11 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " goto the middle of current line
 nnoremap gm :call cursor(0, len(getline('.'))/2)<cr>
+
+" insert data and time in format:  2015/05/30 07:23/12
+nnoremap <F5> "=strftime("%Y/%m/%d %T")<CR>P
+inoremap <F5> <C-R>=strftime("%Y/%m/%d %T")<CR>
+
 " }}}
 
 " Auto command ------------------------------- {{{
