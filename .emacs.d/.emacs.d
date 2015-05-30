@@ -1,1 +1,0 @@
-/home/minm/.emacs.d
