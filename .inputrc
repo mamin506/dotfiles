@@ -1,0 +1,37 @@
+# User:	Min Ma <mamin506@gmail.com>
+# Last Change:	$Date: 2015/06/02 14:22:33 $
+# .inputrc file from user
+# User specific keystrokes
+
+# incremental searching with up and down
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+# keep left and right functionable
+"\e[C": forward-char
+"\e[D": backward-char
+
+# magic space set-up
+$if Bash
+	Space: magic-space
+$endif
+
+# suppose using emacs key binding
+"\M-o": "\C-p\C-a\M-f "
+
+# keep hidden files hidden
+set match-hidden-files off
+
+# complete things that have been typed in the wrong case
+set completion-ignore-case on
+
+# when listing possible file completions, put / after directory names and * after programs
+set visible-stats on
+
+# List the possible completions when Tab is pressed
+set show-all-if-ambiguous on
+
+# Make Meta+S cycle through the list
+"\M-s": menu-complete
+
+

@@ -15,13 +15,30 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+# WHENEVER displaying the prompt, write the previous line to disk
+PROMPT_COMMAND='history -a'
+
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+# Magic Space set-up (or set this in .inputrc)
+# Meta + . for previous command's last argument
+# !:0 is the previous command name
+# !^, !:2, !:3, ..., !$ are the arguments
+# !* is all the arguments
+# !-2, !-3, ... are earlier commands
+# bind Space:magic-space
+
+# ignore small typos when changing directory
+shopt -s cdspell
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
+# avoid accidental exiting
+export IGNOREEOF=1
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
@@ -107,6 +124,7 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
+# Can be disabled for a particular command  'bash$ complete -r cd'
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
@@ -115,6 +133,3 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#export http_proxy="proxy.xilinx.com:8080"
-
-export LSF=~/workspace/LSF
