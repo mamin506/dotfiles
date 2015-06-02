@@ -13,6 +13,8 @@ ln -s $CURR_DIR/.dir_colors ~/.dir_colors
 
 ln -s $CURR_DIR/.bash_aliases ~/.bash_aliases
 
+ln -s $CURR_DIR/.inputrc ~/.inputrc
+
 ln -s $CURR_DIR/.vimrc ~/.vimrc
 ln -s $CURR_DIR/.vim ~/.vim
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
