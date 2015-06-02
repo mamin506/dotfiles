@@ -24,7 +24,7 @@
 .emacs.d/ac-comphist.dat
 .emacs.d/\#*
 .emacs.d/elpa
-.emacs.d/site-lisp/package/
+.emacs.d/site-lisp/package
 .emacs.d/swank
 .emacs.d/.mc-lists.el
 .emacs.d/var
