@@ -133,3 +133,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# clean PATH, remove . and empty locate                              
+PATH=`echo $PATH | sed -e 's/\.://g' -e 's/::/:/g'`
