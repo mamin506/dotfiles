@@ -49,7 +49,7 @@ set t_vb =
 set tm=500
 
 " set color scheme
-colorscheme desert
+colorscheme my_desert
 set background=dark
 
 " Turn backup off
