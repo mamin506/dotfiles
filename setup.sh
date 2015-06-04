@@ -1,10 +1,18 @@
 #! /bin/bash
 
 CURR_DIR="`pwd`"
-#echo "current dir: $CURR_DIR"
+
+APPS_LIST="git "
+APPS_LIST+="zsh "
+APPS_LIST+="curl "
+
+#echo "DEBUG: current dir is $CURR_DIR"
+#echo "DEBUG: current application list is $APPS_LIST"
+
+# install dependent applications
+apt-get install $APPS_LIST -y
 
 if [ -e ~/.bashrc ]; then
-	#echo ".bashrc exist"
 	mv ~/.bashrc ~/.bashrc_bk
 fi
 ln -s $CURR_DIR/.bashrc ~/.bashrc
@@ -21,3 +29,7 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
 ln -s $CURR_DIR/.emacs.d ~/.emacs.d 
+
+# install oh-my-zsh 
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+

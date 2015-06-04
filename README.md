@@ -12,4 +12,5 @@ The startup.sh do this things.
   6. clone Vundle repo to ~/.vim/bundle/Vundle.vim (*Make sure you installed git*)
   7. install plugin
   8. create a symbolic link ~/.emacs.d -> current\_dir/.emacs.d
+  9. install oh-my-zsh
 
