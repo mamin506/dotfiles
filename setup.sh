@@ -4,6 +4,7 @@ CURR_DIR="`pwd`"
 
 APPS_LIST="git "
 APPS_LIST+="zsh "
+APPS_LIST+="tmux "
 APPS_LIST+="curl "
 
 #echo "DEBUG: current dir is $CURR_DIR"
