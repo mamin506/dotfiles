@@ -1,7 +1,7 @@
 # User:	Min Ma <mamin506@gmail.com>
 # Last Change:	$Date: 2015/06/02 14:22:33 $
 # .inputrc file from user
-# User specific keystrokes
+# User specific keystrokes for readlines
 
 # incremental searching with up and down
 "\e[A": history-search-backward
@@ -33,4 +33,6 @@ set show-all-if-ambiguous on
 
 # Make Meta+S cycle through the list
 #"\M-s": menu-complete
-Tab: menu-complete
+#Tab: menu-complete
+control-j: menu-complete
+control-k: menu-complete-backward
