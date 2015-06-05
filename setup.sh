@@ -4,6 +4,7 @@ CURR_DIR="`pwd`"
 
 APPS_LIST="git "
 APPS_LIST+="zsh "
+APPS_LIST+="tmux "
 APPS_LIST+="curl "
 
 #echo "DEBUG: current dir is $CURR_DIR"
@@ -12,22 +13,28 @@ APPS_LIST+="curl "
 # install dependent applications
 apt-get install $APPS_LIST -y
 
+# back current ~/.bashrc and link
 if [ -e ~/.bashrc ]; then
 	mv ~/.bashrc ~/.bashrc_bk
 fi
 ln -s $CURR_DIR/.bashrc ~/.bashrc
 
+# colors setting
 ln -s $CURR_DIR/.dir_colors ~/.dir_colors
 
+# bash alias
 ln -s $CURR_DIR/.bash_aliases ~/.bash_aliases
 
+# inputrc
 ln -s $CURR_DIR/.inputrc ~/.inputrc
 
+# vim setting
 ln -s $CURR_DIR/.vimrc ~/.vimrc
 ln -s $CURR_DIR/.vim ~/.vim
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
+# emacs setting
 ln -s $CURR_DIR/.emacs.d ~/.emacs.d 
 
 # install oh-my-zsh 

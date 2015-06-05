@@ -32,6 +32,7 @@ set visible-stats on
 set show-all-if-ambiguous on
 
 # Make Meta+S cycle through the list
+# This just didn't work in gnome terminal!!! A stupid bug!
 #"\M-s": menu-complete
 #Tab: menu-complete
 control-j: menu-complete
