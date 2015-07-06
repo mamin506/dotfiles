@@ -28,12 +28,13 @@ set completion-ignore-case on
 # when listing possible file completions, put / after directory names and * after programs
 set visible-stats on
 
+# Make Meta+S cycle through the list
+# This just didn't work in gnome terminal!!! A stupid bug!
+"\M-s": menu-complete
+#Tab: menu-complete
+#control-j: menu-complete
+#control-k: menu-complete-backward
+
 # List the possible completions when Tab is pressed
 set show-all-if-ambiguous on
 
-# Make Meta+S cycle through the list
-# This just didn't work in gnome terminal!!! A stupid bug!
-#"\M-s": menu-complete
-#Tab: menu-complete
-control-j: menu-complete
-control-k: menu-complete-backward
