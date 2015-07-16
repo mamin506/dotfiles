@@ -55,6 +55,9 @@ set background=dark
 " Turn backup off
 "set nobackup
 
+" add the corrent directory
+set path+=
+
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
@@ -210,7 +213,7 @@ command Templatevhdl :call Template_module("vhdl")
 " }}}
 
 " Auto complete pairs
-let s:EnableAutoPair=0
+let s:EnableAutoPair=1
 let s:PAIRS='()[]{}'
 
 " Convenient command to see the difference between the current buffer and the
