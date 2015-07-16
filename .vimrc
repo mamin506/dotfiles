@@ -65,16 +65,18 @@ endif
 let mapleader = "-"
 
 " Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if !(has("win32") || has("win16"))
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
 
-" Let Vundle manage itself
-Plugin 'gmarik/Vundle.vim'
+  " Let Vundle manage itself
+  Plugin 'gmarik/Vundle.vim'
 
-" Plugins
-Plugin 'bling/vim-airline'
+  " Plugins
+  Plugin 'bling/vim-airline'
 
-call vundle#end()
+  call vundle#end()
+endif
 
 " }}}
 
