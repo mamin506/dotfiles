@@ -58,6 +58,9 @@ set background=dark
 " Turn backup off
 "set nobackup
 
+" add the corrent directory
+set path+=
+
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
@@ -65,24 +68,34 @@ else
 endif
 
 " Set leader
+<<<<<<< HEAD
 "let mapleader = "-"
+=======
+>>>>>>> 4046a526e9de13324b44f696570e904ce7075961
 let mapleader = " "
 
 " Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if !(has("win32") || has("win16"))
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
 
-" Let Vundle manage itself
-Plugin 'gmarik/Vundle.vim'
+  " Let Vundle manage itself
+  Plugin 'gmarik/Vundle.vim'
 
+<<<<<<< HEAD
 " Plugins
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/taglist.vim'
+=======
+  " Plugins
+  Plugin 'bling/vim-airline'
+>>>>>>> 4046a526e9de13324b44f696570e904ce7075961
 
-call vundle#end()
+  call vundle#end()
+endif
 
 " }}}
 
@@ -107,6 +120,7 @@ nnoremap <leader>ev :vs $MYVIMRC<cr>
 " Source .vimrc file
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+<<<<<<< HEAD
 " go to left window
 nnoremap <leader>h <c-w>h
 
@@ -118,6 +132,19 @@ nnoremap <leader>k <c-w>k
 
 " go to down window
 nnoremap <leader>j <c-w>j
+=======
+" Move to left window
+nnoremap <leader>h  <c-w>h
+
+" Move to right window
+nnoremap <leader>l  <c-w>l
+
+" Move to up window
+nnoremap <leader>k  <c-w>k
+
+" Move to down window
+nnoremap <leader>j  <c-w>j
+>>>>>>> 4046a526e9de13324b44f696570e904ce7075961
 
 " goto the middle of current line
 nnoremap gm :call cursor(0, len(getline('.'))/2)<cr>
@@ -180,7 +207,7 @@ endif " has("autocmd")
 function! Template_module(lang)
     if a:lang ==? "vhdl"
         let l:content=""
-        let l:content=l:content . "library IEEE;\n"
+        let l:content=ll:content . "library IEEE;\n"
         let l:content=l:content . "use IEEE.STD_LOGIC_1164.all;\n"
         let l:content=l:content . "use IEEE.NUMERIC_STD.all;\n\n"
         let l:content=l:content . "entity ett_name is\n\tgeneric (\n);\n\tport (\n);\nend entity ett_name;\n\n"
@@ -230,7 +257,7 @@ command Templatevhdl :call Template_module("vhdl")
 " }}}
 
 " Auto complete pairs
-let s:EnableAutoPair=0
+let s:EnableAutoPair=1
 let s:PAIRS='()[]{}'
 
 " Convenient command to see the difference between the current buffer and the

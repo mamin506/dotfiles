@@ -1,4 +1,6 @@
 # global ignore rules do not contain a slash '/' in pattern
+*~
+*.last
 
 # ignore rules in .vim folder
 /.vim/.netrwhist
@@ -45,3 +47,4 @@
 /.emacs.d/.sx/
 /.emacs.d/org-clock-save.el
 /.emacs.d/ditaa.jar
+
