@@ -65,7 +65,7 @@ else
 endif
 
 " Set leader
-let mapleader = "-"
+let mapleader = " "
 
 " Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -101,6 +101,18 @@ nnoremap <leader>ev :vs $MYVIMRC<cr>
 
 " Source .vimrc file
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Move to left window
+nnoremap <leader>h  <c-w>h
+
+" Move to right window
+nnoremap <leader>l  <c-w>l
+
+" Move to up window
+nnoremap <leader>k  <c-w>k
+
+" Move to down window
+nnoremap <leader>j  <c-w>j
 
 " goto the middle of current line
 nnoremap gm :call cursor(0, len(getline('.'))/2)<cr>
