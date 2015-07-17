@@ -40,7 +40,10 @@ set backspace=indent,eol,start
 set incsearch		" do incremental searching
 
 " Show the line number
-set nu
+" set number
+
+" show the relative line number
+set relativenumber
 
 " No annoying sound on errors
 set noerrorbells
@@ -62,7 +65,8 @@ else
 endif
 
 " Set leader
-let mapleader = "-"
+"let mapleader = "-"
+let mapleader = " "
 
 " Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -73,6 +77,10 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins
 Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-scripts/taglist.vim'
 
 call vundle#end()
 
@@ -87,7 +95,7 @@ call vundle#end()
 map Q gq
 
 " Fold and unfold
-nnoremap <space> za
+nnoremap <space><space> za
 
 " Word to uppercase
 inoremap <c-u> <Esc>viwUi
@@ -98,6 +106,18 @@ nnoremap <leader>ev :vs $MYVIMRC<cr>
 
 " Source .vimrc file
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" go to left window
+nnoremap <leader>h <c-w>h
+
+" go to right window
+nnoremap <leader>l <c-w>l
+
+" go to up window
+nnoremap <leader>k <c-w>k
+
+" go to down window
+nnoremap <leader>j <c-w>j
 
 " goto the middle of current line
 nnoremap gm :call cursor(0, len(getline('.'))/2)<cr>
@@ -193,11 +213,13 @@ command Templatevhdl :call Template_module("vhdl")
 
     " close tlist window when it is the only window
     let Tlist_Exit_OnlyWindow = 1
+    
+    " use right window
+    let Tlist_Use_Right_Window = 1
 
 " airline setting
   "Appear status line all the time
   set laststatus=2
-    
 
 " }}}
 

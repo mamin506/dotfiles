@@ -21,6 +21,7 @@
       org-export-kill-product-buffer-when-displayed t
       org-tags-column 80)
 
+(setq org-agenda-files (list "~/git/private/orgs/"))
 
 ;;;; Lots of stuff from http://doc.norang.ca/org-mode.html
 ;;
