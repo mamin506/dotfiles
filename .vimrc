@@ -68,10 +68,6 @@ else
 endif
 
 " Set leader
-<<<<<<< HEAD
-"let mapleader = "-"
-=======
->>>>>>> 4046a526e9de13324b44f696570e904ce7075961
 let mapleader = " "
 
 " Vundle
@@ -82,17 +78,12 @@ if !(has("win32") || has("win16"))
   " Let Vundle manage itself
   Plugin 'gmarik/Vundle.vim'
 
-<<<<<<< HEAD
 " Plugins
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/taglist.vim'
-=======
-  " Plugins
-  Plugin 'bling/vim-airline'
->>>>>>> 4046a526e9de13324b44f696570e904ce7075961
 
   call vundle#end()
 endif
@@ -120,7 +111,6 @@ nnoremap <leader>ev :vs $MYVIMRC<cr>
 " Source .vimrc file
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-<<<<<<< HEAD
 " go to left window
 nnoremap <leader>h <c-w>h
 
@@ -132,19 +122,6 @@ nnoremap <leader>k <c-w>k
 
 " go to down window
 nnoremap <leader>j <c-w>j
-=======
-" Move to left window
-nnoremap <leader>h  <c-w>h
-
-" Move to right window
-nnoremap <leader>l  <c-w>l
-
-" Move to up window
-nnoremap <leader>k  <c-w>k
-
-" Move to down window
-nnoremap <leader>j  <c-w>j
->>>>>>> 4046a526e9de13324b44f696570e904ce7075961
 
 " goto the middle of current line
 nnoremap gm :call cursor(0, len(getline('.'))/2)<cr>
