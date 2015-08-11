@@ -127,8 +127,15 @@ nnoremap <leader>j <c-w>j
 nnoremap gm :call cursor(0, len(getline('.'))/2)<cr>
 
 " insert data and time in format:  2015/05/30 07:23/12
-nnoremap <F5> "=strftime("%Y/%m/%d %T")<CR>P
-inoremap <F5> <C-R>=strftime("%Y/%m/%d %T")<CR>
+" The accepted format depends on your system, thus this is not portable!
+if (has("win32") || has("win16"))
+  " for windows, search 'strftime' at MSDN 
+  let s:TimeFormat="%Y/%m/%d %X"
+else
+  let s:TimeFormat="%Y/%m/%d %t"
+endif
+exe "nnoremap <F5> \"=strftime(\"" . s:TimeFormat . "\")<CR>P"
+exe "inoremap <F5> <C-R>=strftime(\"" . s:TimeFormat . "\")<CR>"
 
 " }}}
 
