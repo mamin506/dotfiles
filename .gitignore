@@ -5,7 +5,7 @@
 # ignore rules in .vim folder
 /.vim/.netrwhist
 /.vim/bundle/*
-!/.vim/bundle/Vundle.vim
+!/.vim/bundle/
 
 # ignore rules in .emacs.d folder
 /.emacs.d/url/cache
