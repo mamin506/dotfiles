@@ -1,6 +1,6 @@
 (require-package 'evil)
 
-(evil-mode 1)
+(evil-mode 0)
 
 ;; Do not use evil-mode on org-mode
 (evil-set-initial-state 'org-mode 'emacs)
