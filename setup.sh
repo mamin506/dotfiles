@@ -28,6 +28,9 @@ ln -s $CURR_DIR/.bash_aliases ~/.bash_aliases
 # inputrc
 ln -s $CURR_DIR/.inputrc ~/.inputrc
 
+# tmux.conf
+ln -s $CURR_DIR/.tmux.conf ~/.tmux.conf
+
 # vim setting
 ln -s $CURR_DIR/.vimrc ~/.vimrc
 ln -s $CURR_DIR/.vim ~/.vim
