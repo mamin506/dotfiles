@@ -40,7 +40,7 @@ set backspace=indent,eol,start
 set incsearch		" do incremental searching
 
 " Show the line number
-" set number
+set number
 
 " show the relative line number
 set relativenumber
