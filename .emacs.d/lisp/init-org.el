@@ -22,8 +22,9 @@
 (if (boundp 'org-user-agenda-files)
     (setq org-agenda-files org-user-agenda-files)
   (setq org-agenda-files (quote ("~/org"
-                               "~/org/client1"
-                               "~/client2"))))
+				 "~/org/client1"
+				 "~/org/knowledge"
+                                 "~/client2"))))
 
 ;; Custom Key Bindings
 (global-set-key (kbd "<f12>") 'org-agenda)
