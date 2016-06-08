@@ -9,7 +9,7 @@
  '(inhibit-startup-screen t)
  '(org-agenda-files
    (quote
-    ("/Users/gongmuwei/org/mumu.org" "/Users/gongmuwei/org/refile.org" "/Users/gongmuwei/org/todo.org"))))
+    ("~/org" "~/org/knowledge"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

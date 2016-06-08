@@ -20,7 +20,7 @@
 ;; org-agenda-files in the variable org-user-agenda-files
 ;;
 (if (boundp 'org-user-agenda-files)
-    (setq org-agenda-files org-user-agenda-files)
+  (setq org-agenda-files org-user-agenda-files)
   (setq org-agenda-files (quote ("~/org"
 				 "~/org/client1"
 				 "~/org/knowledge"))))
