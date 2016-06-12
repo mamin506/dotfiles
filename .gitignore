@@ -11,7 +11,8 @@
 /.emacs.d/.emacs.desktop
 /.emacs.d/auto-save-list
 /.emacs.d/.session
-#/.emacs.d/custom.el
+/.emacs.d/custom.el
+/.emacs.d/recentf
 /.emacs.d/*.elc
 /.emacs.d/CVS
 /.emacs.d/.svn
