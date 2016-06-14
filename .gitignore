@@ -1,6 +1,7 @@
 # global ignore rules do not contain a slash '/' in pattern
 *~
 *.last
+\#
 
 # ignore rules in .vim folder
 /.vim/.netrwhist
@@ -11,7 +12,8 @@
 /.emacs.d/.emacs.desktop
 /.emacs.d/auto-save-list
 /.emacs.d/.session
-#/.emacs.d/custom.el
+/.emacs.d/custom.el
+/.emacs.d/recentf
 /.emacs.d/*.elc
 /.emacs.d/CVS
 /.emacs.d/.svn
