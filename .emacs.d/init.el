@@ -59,6 +59,7 @@
 (require 'init-windows)
 ;;(require 'init-sessions)
 (require 'init-fonts)
+(require 'init-chinese-fonts-setup)
 ;;(require 'init-mmm)
 ;;
 ;;(require 'init-editing-utils)
