@@ -19,4 +19,7 @@ alias path='echo -e ${PATH//:/\\n}'
 # please use v2.16 above 'which'
 alias which='alias | /usr/local/bin/which --tty-only --read-alias --show-dot --show-tilde'
 
+# GVim
+alias gv='gvim'
+
 # vim: set ft=sh: ":help modeline"
