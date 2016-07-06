@@ -84,6 +84,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/taglist.vim'
+Plugin 'vim-scripts/gitignore.vim'
 
   call vundle#end()
 else

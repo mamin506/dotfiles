@@ -122,6 +122,9 @@
 ;;(unless (server-running-p)
 ;;  (server-start))
 
+(set-frame-parameter (selected-frame) 'alpha (list 100 100))
+
+(add-to-list 'default-frame-alist (cons 'alpha (list 100 100)))
 
 ;;----------------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
