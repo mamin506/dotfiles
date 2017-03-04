@@ -58,8 +58,10 @@ set background=dark
 " Turn backup off
 "set nobackup
 
-" add the corrent directory
-set path+=
+" Source system-specific .vimrc.local
+if filereadable(expand('~/.vimrc.local'))
+  source ~/.vimrc.local
+endif
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -286,8 +288,6 @@ command Templatevhdl :call Template_module("vhdl")
 " iabbrs
   iabbr #c     ########################################
 
-" }}}
-
 " Auto complete pairs
 let s:EnableAutoPair=1
 let s:PAIRS='()[]{}'
@@ -319,4 +319,6 @@ function! AutoPair(p)
         return a:p
     endif
 endfunction
+
+" }}}
 
