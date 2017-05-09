@@ -72,6 +72,7 @@
 ;;(require 'init-compile)
 ;;(require 'init-crontab)
 ;;(require 'init-textile)
+(require 'init-eww)
 (require 'init-markdown)
 ;;(require 'init-csv)
 ;;(require 'init-erlang)
@@ -133,6 +134,10 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
+;;----------------------------------------------------------------------------
+;; Turn off alarms completely
+;;----------------------------------------------------------------------------
+(setq ring-bell-function 'ignore)
 
 ;;----------------------------------------------------------------------------
 ;; Allow users to provide an optional "init-local" containing personal settings
