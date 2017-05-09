@@ -1,0 +1,1 @@
+/home/minm/workspace/setting_sync/.vim

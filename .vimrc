@@ -58,8 +58,10 @@ set background=dark
 " Turn backup off
 "set nobackup
 
-" add the corrent directory
-set path+=
+" Source system-specific .vimrc.local
+if filereadable(expand('~/.vimrc.local'))
+  source ~/.vimrc.local
+endif
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -80,11 +82,12 @@ if !(has("win32") || has("win16"))
 
 " Plugins
 Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/gitignore.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/SrcExpl'
+Plugin 'vim-scripts/taglist.vim'
 
   call vundle#end()
 else
@@ -233,6 +236,7 @@ command Templatevhdl :call Template_module("vhdl")
 " }}}
 
 " Plugin setting ------------------------------- {{{
+
 " Setting Tlist 
   " do not auto open tlist window
   let Tlist_Auto_Open = 0
@@ -244,38 +248,45 @@ command Templatevhdl :call Template_module("vhdl")
   let Tlist_Exit_OnlyWindow = 1
   
   " use right window
-  let Tlist_Use_Right_Window = 1
+  let Tlist_Use_Right_Window = 0
 
 " airline setting
-" set airline
-let g:airline_section_b = '%{strftime("%c")}'
-let g:airline_section_y = 'BN: %{bufnr("%")}'
+  " set airline
+  let g:airline_section_b = '%{strftime("%c")}'
+  let g:airline_section_y = 'BN: %{bufnr("%")}'
 
-" always appear airline statusline
-set laststatus=2
+  " always appear airline statusline
+  set laststatus=2
 
-" Automatically displays all buffers when there's only one tab open
-let g:airline#extensions#tabline#enabled = 1
+  " Automatically displays all buffers when there's only one tab open
+  let g:airline#extensions#tabline#enabled = 1
 
-" enable index of the buffer in tabline
-let g:airline#extensions#tabline#buffer_idx_mode = 1
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
+  " enable index of the buffer in tabline
+  let g:airline#extensions#tabline#buffer_idx_mode = 1
+  nmap <leader>1 <Plug>AirlineSelectTab1
+  nmap <leader>2 <Plug>AirlineSelectTab2
+  nmap <leader>3 <Plug>AirlineSelectTab3
+  nmap <leader>4 <Plug>AirlineSelectTab4
+  nmap <leader>5 <Plug>AirlineSelectTab5
+  nmap <leader>6 <Plug>AirlineSelectTab6
+  nmap <leader>7 <Plug>AirlineSelectTab7
+  nmap <leader>8 <Plug>AirlineSelectTab8
+  nmap <leader>9 <Plug>AirlineSelectTab9
+
+" NERDTree
+
+  " Windows Position
+  let NERDTreeWinPos="right"
+
+  " Filter
+    let NERDTreeIgnore=['.d$[[dir]]', '.o$[[file]]']
+<
 
 " }}}
 
 " MISC ----------------------------------------- {{{
 " iabbrs
   iabbr #c     ########################################
-
-" }}}
 
 " Auto complete pairs
 let s:EnableAutoPair=1
@@ -308,4 +319,6 @@ function! AutoPair(p)
         return a:p
     endif
 endfunction
+
+" }}}
 
