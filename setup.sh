@@ -1,47 +1,68 @@
-#! /bin/bash
+#! /bin/bash --
 
-CURR_DIR="`pwd`"
+# Get home directory path
+eval home_dir=~
 
-APPS_LIST="git "
-APPS_LIST+="zsh "
-APPS_LIST+="tmux "
-APPS_LIST+="curl "
+# Get current directory
+CURR_DIR=$(pwd)
 
-#echo "DEBUG: current dir is $CURR_DIR"
-#echo "DEBUG: current application list is $APPS_LIST"
+# Get dotfile directory and go to the directory
+DOTFILE_DIR="$(readlink -f $(dirname "${BASH_SOURCE}"))"
+cd $DOTFILE_DIR
 
-# install dependent applications
-apt-get install $APPS_LIST -y
+apt_install() {
+    echo "*** $2"
+    sudo apt install -y $1
+}
 
-# back current ~/.bashrc and link
-if [ -e ~/.bashrc ]; then
-	mv ~/.bashrc ~/.bashrc_bk
+install_pkg() {
+    # For Ubuntu
+    apt_install $1 $2
+}
+
+install_pkg_all() {
+    echo "** Install necessary packages"
+    install_pkg git                 "Installing git"
+    install_pkg vim                 "Installing vim"
+    install_pkg tmux                "Installing TMUX"
+    install_pkg curl                "Installing curl"
+    install_pkg zsh                 "Installing zsh"
+    install_pkg exuberant-ctags     "Installing exuberant-ctags"
+}
+
+symlink() {
+    dst=${2}/${1}
+    src=${3}/${1}
+    if [ -e "$dst" ]; then
+        echo "*** Backup $dst as ${dst}_bk"
+        mv $dst ${dst}_bk
+    fi
+    ln -s $src $dst
+}
+
+symlink_all() {
+    echo "** Create symlink at $home_dir directory"
+    symlink .bashrc         $home_dir $DOTFILE_DIR
+    symlink .dir_colors     $home_dir $DOTFILE_DIR
+    symlink .bash_aliases   $home_dir $DOTFILE_DIR
+    symlink .tmux.conf      $home_dir $DOTFILE_DIR
+    symlink .vimrc          $home_dir $DOTFILE_DIR
+    symlink .vim            $home_dir $DOTFILE_DIR
+    symlink .emacs.d        $home_dir $DOTFILE_DIR
+}
+
+install_pkg_all
+symlink_all
+
+# install vim plugin
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
-ln -s $CURR_DIR/.bashrc ~/.bashrc
-
-# colors setting
-ln -s $CURR_DIR/.dir_colors ~/.dir_colors
-
-# bash alias
-ln -s $CURR_DIR/.bash_aliases ~/.bash_aliases
-
-# inputrc
-ln -s $CURR_DIR/.inputrc ~/.inputrc
-
-# tmux.conf
-ln -s $CURR_DIR/.tmux.conf ~/.tmux.conf
-
-# vim setting
-ln -s $CURR_DIR/.vimrc ~/.vimrc
-ln -s $CURR_DIR/.vim ~/.vim
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
-
-# emacs setting
-ln -s $CURR_DIR/.emacs.d ~/.emacs.d 
 
 # install oh-my-zsh 
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
-# detect if running on a virtual machine
-dmidecode | grep -i product
+## detect if running on a virtual machine
+#dmidecode | grep -i product
+
