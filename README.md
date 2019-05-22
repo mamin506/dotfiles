@@ -1,4 +1,4 @@
-System setting sync
+Min's dotfiles
 ==================
 
 This is Min's Vim/Emacs/Bash configuration
