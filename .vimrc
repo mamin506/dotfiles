@@ -43,7 +43,7 @@ set incsearch		" do incremental searching
 set number
 
 " show the relative line number
-set relativenumber
+" set relativenumber
 
 " No annoying sound on errors
 set noerrorbells
@@ -52,7 +52,6 @@ set t_vb =
 set tm=500
 
 " set color scheme
-colorscheme my_desert
 set background=dark
 
 " Turn backup off
@@ -72,43 +71,22 @@ endif
 " Set leader
 let mapleader = " "
 
-" Vundle
-if !(has("win32") || has("win16"))
-  set rtp+=~/.vim/bundle/Vundle.vim
-  call vundle#begin()
-
-  " Let Vundle manage itself
-  Plugin 'gmarik/Vundle.vim'
-
-" Plugins
-Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-scripts/gitignore.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/SrcExpl'
-Plugin 'vim-scripts/taglist.vim'
-
-  call vundle#end()
-else
-  set rtp+=~/vimfiles/bundle/Vundle.vim
-  call vundle#begin()
-  call vundle#rc("~/vimfiles/bundle/")
-
-  " Let Vundle manage itself
-  Plugin 'gmarik/Vundle.vim'
+" vim-plug setting ---------------------------- {{{
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
 
 " Plugins
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-scripts/taglist.vim'
+Plug 'vim-scripts/gitignore.vim'
+" On-demand loading: loaded when the specified command is executed
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 
-  call vundle#end()
-
-endif
-
+call plug#end()
 " }}}
 
 " Status Line ------------------------------- {{{
